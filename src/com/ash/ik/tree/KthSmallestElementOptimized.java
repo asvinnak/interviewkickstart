@@ -63,6 +63,30 @@ public class KthSmallestElementOptimized {
         findKElementInArrayEvenBetterSpaceOptimized(root.right, k, a, iw);
     }
 
+    static int kth_smallest_element1(BTreeNode root, int k) {
+
+        int[] a = new int[1];
+        helper1(root, k, a);
+        return a[0];
+    }
+
+    static void helper1(BTreeNode root, int k, int[] a) {
+
+        if(root == null || k<0) {
+            return;
+        }
+
+        if(k == 0) {
+            a[0] = root.v;
+            return;
+        }
+
+        helper1(root.left, k-1, a);
+
+        helper1(root.right, k-1, a);
+    }
+
+
     public static void main(String[] args) {
         BTreeNode root = new BTreeNode(3);
         root.left = new BTreeNode(2);
@@ -72,5 +96,6 @@ public class KthSmallestElementOptimized {
 
         System.out.println(kth_smallest_element(root, 4));
         System.out.println(kth_smallest_elementSpaceOptimized(root, 4));
+        System.out.println(kth_smallest_element1(root, 4));
     }
 }

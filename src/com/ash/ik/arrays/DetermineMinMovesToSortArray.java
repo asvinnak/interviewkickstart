@@ -41,6 +41,8 @@ public class DetermineMinMovesToSortArray {
         return count;
     }
 
+
+
     public static void main(String[] args) {
         int[] a= new int[] {1,3,2};
         System.out.println(minMovesToSort(a));

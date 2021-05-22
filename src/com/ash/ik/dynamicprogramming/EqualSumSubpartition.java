@@ -52,7 +52,7 @@ public class EqualSumSubpartition {
         if (sum % 2 != 0) {
             return false;
         }
-        List<Integer> slate = new ArrayList<>();
+
         return canPartitionRecursive(num, sum / 2, 0);
     }
 

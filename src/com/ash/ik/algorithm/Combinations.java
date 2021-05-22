@@ -1,7 +1,6 @@
 package com.ash.ik.algorithm;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
@@ -75,10 +74,10 @@ public class Combinations {
         if (nidx >= n) {
             return;
         }
-        slate.add(nidx+1);
-        inclusionAndExclusion(n, k, nidx + 1, kidx + 1,  slate, rslt);
-        slate.remove(slate.size()-1);
-        inclusionAndExclusion(n, k, nidx + 1, kidx,  slate, rslt);
+        slate.add(nidx + 1);
+        inclusionAndExclusion(n, k, nidx + 1, kidx + 1, slate, rslt);
+        slate.remove(slate.size() - 1);
+        inclusionAndExclusion(n, k, nidx + 1, kidx, slate, rslt);
     }
 
     private int combinationsCount(int n, int k) {
@@ -109,7 +108,5 @@ public class Combinations {
         List<List<Integer>> list1 = o.combineInEx(4, 2);
 
         list1.forEach(System.out::println);
-
-
     }
 }

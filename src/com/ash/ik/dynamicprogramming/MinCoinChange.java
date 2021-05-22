@@ -3,7 +3,7 @@ package com.ash.ik.dynamicprogramming;
 import java.util.Arrays;
 import java.util.List;
 
-public class MinCoinChange {
+public class  MinCoinChange {
 
     public static int minimum_coins(List<Integer> coins, int value) {
         // Write your code here

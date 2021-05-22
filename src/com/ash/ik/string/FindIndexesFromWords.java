@@ -81,15 +81,15 @@ public class FindIndexesFromWords {
 
         String sx1 = "barfoothefoobarman";
         String[] p1= {"foo","bar"};
-        //o.findSubstring(sx1, p1).forEach(System.out::print);
+        o.findSubstring(sx1, p1).forEach(System.out::print);
 
         String sx2 = "wordgoodgoodgoodbestword";
         String[] p2= {"word","good","best","word"};
-        //o.findSubstring(sx2, p2).forEach(System.out::print);
+        o.findSubstring(sx2, p2).forEach(System.out::print);
 
         String sx3 = "aaaaaaaa";
         String[] p3= {"aa","aa","aa"};
-        //o.findSubstring(sx3, p3).forEach(System.out::print);
+        o.findSubstring(sx3, p3).forEach(System.out::print);
 
     }
 

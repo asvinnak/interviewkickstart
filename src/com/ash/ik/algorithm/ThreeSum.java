@@ -23,7 +23,8 @@ public class ThreeSum {
                     if(diff == nums[l] + nums[h]) {
                         result.add(Arrays.asList(nums[i], nums[l], nums[h]));
 
-                        while( l < h && nums[l] == nums[l+1]) {
+                        while(
+                            l < h && nums[l] == nums[l+1]) {
                             l++;
                         }
 

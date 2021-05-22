@@ -68,7 +68,7 @@ public class WordBreakCount {
 
     public static void main(String[] args) {
         List<String> dict= Arrays.asList("kick", "start", "kickstart", "is", "awe", "some", "awesome");
-       // System.out.println(wordBreakCount(dict, "kickstartisawesome"));
+        System.out.println(wordBreakCount(dict, "kickstartisawesome"));
 
         List<String> dict1= Arrays.asList("aswani", "kumar", "vinnakota", "aswanikumar", "kumarvinnakota");
         System.out.println(wordBreakCount(dict1, "aswanikumarvinnakota"));

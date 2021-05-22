@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
-import com.sun.xml.internal.xsom.impl.SchemaImpl;
-
 /**
  * Given A Graph, Build A New One With Reversed Edges
  * <p>
@@ -89,32 +87,44 @@ public class BuildGraphWithReverseEdges {
     }
 
     ;
+    // Graph has edges 1->2->3->1
 
+    /**
+     * 1 -> 2
+     * 2 -> 3
+     * 3 -> 1
+     */
     static Node build_other_graph(Node node) {
         Map<Node, Node> map = new HashMap<>();
         Map<Integer, Boolean> visited = new HashMap<>();
-        transformGraph(node, map, visited);
+        cloneGraph(node, map, visited);
 
-        Node parent = null;
-        for (Map.Entry<Node, Node> entry : map.entrySet()) {
-            parent = entry.getValue();
-            for(Node n: entry.getKey().neighbours) {
-                Node child = n;
-                child.neighbours.add(parent);
+        /**
+         *
+         * 2'- 1'
+         * 3'- 2'
+         * 1 - 3'
+         */
+        for(Node ori_parent: map.keySet()) {
+            Node clonedParent = map.get(ori_parent);
+            for(Node org_child: ori_parent.neighbours) {
+                Node clonedChild= map.get(org_child);
+                clonedChild.neighbours.add(clonedParent);
             }
         }
 
         return map.get(node);
     }
 
-    private static void transformGraph(Node node, Map<Node, Node> map, Map<Integer, Boolean> visited) {
+    //After clone 1->1', 2->2', 3->3'
+    private static void cloneGraph(Node node, Map<Node, Node> map, Map<Integer, Boolean> visited) {
 
         map.put(node, new Node(node.val));
         visited.put(node.val, true);
 
         for (Node n : node.neighbours) {
             if (!visited.get(n.val)) {
-                transformGraph(n, map, visited);
+                cloneGraph(n, map, visited);
             }
         }
     }

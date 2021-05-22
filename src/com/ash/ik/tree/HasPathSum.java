@@ -71,4 +71,34 @@ public class HasPathSum {
         slate.pop();
 
     }
+
+    public static void main(String args[])
+    {
+        int sum = 21;
+
+        /* Constructed binary tree is
+              10
+             /  \
+           8     2
+          / \   /
+         3   5 2
+        */
+
+        BTreeNode tree = new BTreeNode(10);
+        tree.left = new BTreeNode(8);
+        tree.right = new BTreeNode(2);
+        tree.left.left = new BTreeNode(3);
+        tree.left.right = new BTreeNode(5);
+        tree.right.left = new BTreeNode(2);
+
+        if (hasPathSum(tree, sum))
+            System.out.println(
+                "There is a root to leaf path with sum "
+                    + sum);
+        else
+            System.out.println(
+                "There is no root to leaf path with sum "
+                    + sum);
+    }
+
 }

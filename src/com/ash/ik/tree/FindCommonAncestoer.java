@@ -14,6 +14,11 @@ import java.util.List;
  * Output: LCA(8, 9)=5
  *
  *
+ *                  1
+ *           2              3
+ *       4      5       6       7
+ *          8      9
+ *
  *
  * There are three shared parents of 8 and 9 in this tree: 5, 2, 1. Of those three, the farthest from the root is 5.
  */
@@ -44,6 +49,8 @@ public class FindCommonAncestoer {
         return left != null ? left : right;
     }
 
+
+
     public static void main(String[] args) {
         BTreeNode root = new BTreeNode(1);
         root.left = new BTreeNode(2);
@@ -60,6 +67,7 @@ public class FindCommonAncestoer {
         BTreeNode b = new BTreeNode(9);
 
        System.out.println(FindCommonAncestoer.lca(root, a, b));
+
 
     }
     

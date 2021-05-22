@@ -7,7 +7,11 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * 1 /  \ 2    3 / \ 4    5
+ *      1
+ *     /  \
+ *   2     3
+ *  / \
+ *4    5
  * <p>
  * /p [4,2,1,3]  or [5,2,1,3]
  * <p>

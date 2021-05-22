@@ -2,6 +2,14 @@ package com.ash.ik.tree;
 
 import java.util.List;
 
+/**
+ *            10
+ *       12         15
+ *   25     30   36
+ *
+ *
+ *   head 25<->12<->30<->10<->36<->15 tail
+ */
 public class ConvertBSTToDoubleLL {
 
     static BTreeNode BTtoLL(BTreeNode root) {

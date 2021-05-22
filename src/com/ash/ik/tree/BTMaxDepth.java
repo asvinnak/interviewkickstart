@@ -11,7 +11,7 @@ public class BTMaxDepth {
         }
 
         if (root.left == null && root.right == null) {
-            maxDepth = Math.max(maxDepth, depth + 1);
+            maxDepth = Math.max(maxDepth, depth);
         }
 
         maxDepth(root.left, depth + 1);
@@ -27,6 +27,6 @@ public class BTMaxDepth {
         root.left.right = new BTreeNode(5);
         root.right.left = new BTreeNode(6);
 
-        System.out.println(maxDepth(root, 0));
+        System.out.println(maxDepth(root, 1));
     }
 }

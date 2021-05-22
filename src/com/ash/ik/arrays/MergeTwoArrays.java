@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MergeTwoArrays {
 
     public int[] mergeTwoSortedArrays(int[] a1, int[] a2) {
-        int[] result = new int[a1.length];
+        int[] result = new int[a1.length+a2.length];
 
         int p1 = 0;
         int p2 = 0;

@@ -35,7 +35,7 @@ public class DijkstraAlgorithm {
         int[] distances = new int[vertexes];
         boolean[] visited = new boolean[vertexes];
 
-        PriorityQueue<Node> pq = new PriorityQueue<>();
+            PriorityQueue<Node> pq = new PriorityQueue<>();
 
         for (int i = 0; i < vertexes; i++) {
             distances[i] = Integer.MAX_VALUE;

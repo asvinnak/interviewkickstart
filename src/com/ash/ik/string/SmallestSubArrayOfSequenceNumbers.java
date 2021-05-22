@@ -88,7 +88,7 @@ public class SmallestSubArrayOfSequenceNumbers {
             if(maxDegree <= map.get(key).degree) {
                 maxDegree = map.get(key).degree;
                 minLen = map.get(key).endIdx - map.get(key).startIdx;
-            } else if(maxDegree == map.get(key).degree && minLen > map.get(key).startIdx) {
+            } else if(maxDegree == map.get(key).degree && minLen > map.get(key).endIdx - map.get(key).startIdx) {
                 maxDegree = map.get(key).degree;
                 minLen = map.get(key).endIdx - map.get(key).startIdx;
             }

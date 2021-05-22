@@ -1,4 +1,4 @@
-package com.ash.ik.string;
+package com.ash.ik.systemdesign.parkinglot.tinyurl;
 
 
 

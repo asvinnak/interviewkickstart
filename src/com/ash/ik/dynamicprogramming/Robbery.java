@@ -54,4 +54,14 @@ public class Robbery {
 
     }
 
+
+    public static void main(String[] args) {
+            Robbery o = new Robbery();
+            int[] arr = {1,2,4,5,1};
+
+            System.out.println(o.maxStolenValue(arr));
+
+    }
+
+
 }

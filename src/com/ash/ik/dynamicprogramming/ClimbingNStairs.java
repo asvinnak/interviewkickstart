@@ -1,7 +1,6 @@
 package com.ash.ik.dynamicprogramming;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * There are n stairs, a person standing at the bottom wants to reach the top. He can climb a certain number of steps at
@@ -44,33 +43,14 @@ public class ClimbingNStairs {
                 if (steps[step] > j) {
                     continue;
                 }
-                dp[j] = dp[j] + dp[j - steps[step]];
+                dp[j] = dp[j]    + dp[j - steps[step]];
             }
         }
         return dp[n];
     }
 
-    public static int minimum_coins(List<Integer> coins, int value) {
-        // Write your code here
 
-        int[] dp= new int[value+1];
-        dp[0] = 0;
-        dp[1] = 1;
-        int min;
-        for(int i=2; i<=value; i++) {
-            min = Integer.MAX_VALUE;
-            for(int coin=0; coin<coins.size(); coin++) {
-                if(coins.get(coin) > i) {
-                    continue;
-                }
-                min= Math.min(min, dp[i - coins.get(coin)]);
-            }
-            dp[i] = min;
-        }
 
-        return dp[value];
-
-    }
     /**
      * number of ways to climb stairs with 1 or 2 at a time with N stairs
      */
